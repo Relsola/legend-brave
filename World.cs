@@ -10,7 +10,7 @@ public partial class World : Node2D
 		_tileMapLayer = GetNode<TileMapLayer>("TileMapLayer");
 		_camera2D = GetNode<Camera2D>("Player/Camera2D");
 
-		var rect = _tileMapLayer.GetUsedRect();
+		var rect = _tileMapLayer.GetUsedRect().Grow(-1);
 		var tileSize = _tileMapLayer.TileSet.TileSize;
 
 		_camera2D.LimitTop = rect.Position.Y * tileSize.Y;
