@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://ifgkxv45180m"]
+[gd_scene load_steps=12 format=4 uid="uid://ifgkxv45180m"]
 
-[ext_resource type="Texture2D" uid="uid://bqgwl2hntn0ep" path="res://Tree-Assets.png" id="1_f3sb7"]
+[ext_resource type="Texture2D" uid="uid://bqgwl2hntn0ep" path="res://assets/legacy_fantasy/Trees/Tree-Assets.png" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://bq1r1nwa0duib" path="res://World.cs" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://bal3rvklthy7" path="res://player.tscn" id="2_fj7yv"]
+[ext_resource type="Texture2D" uid="uid://cagd06ds2bupi" path="res://assets/legacy_fantasy/Background/Background.png" id="4_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://b8r2y8yeh8otx" path="res://assets/legacy_fantasy/Trees/Background.png" id="5_036b0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
 texture = ExtResource("1_f3sb7")
@@ -662,7 +664,7 @@ tile_map_data = PackedByteArray("AAD6/wkAAAAKAAQAAAD6/wgAAAAKAAcAAAD6/wcAAAALAAU
 tile_set = SubResource("TileSet_036b0")
 
 [node name="Player" parent="." instance=ExtResource("2_fj7yv")]
-position = Vector2(-137, 189)
+position = Vector2(-146, 187)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -15)
@@ -670,3 +672,58 @@ limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Decorations" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sky" type="Parallax2D" parent="Decorations"]
+scroll_scale = Vector2(0.3, 0.1)
+scroll_offset = Vector2(-208, 0)
+repeat_size = Vector2(480, 0)
+
+[node name="Background" type="Sprite2D" parent="Decorations/Sky"]
+z_index = -3
+position = Vector2(-207, -31)
+texture = ExtResource("4_aqk2v")
+centered = false
+
+[node name="Hills" type="Parallax2D" parent="Decorations"]
+scroll_scale = Vector2(0.3, 0.1)
+scroll_offset = Vector2(-208, 0)
+repeat_size = Vector2(475, 0)
+
+[node name="Background2" type="Sprite2D" parent="Decorations/Hills"]
+z_index = -2
+position = Vector2(-159, 138)
+texture = ExtResource("5_036b0")
+region_enabled = true
+region_rect = Rect2(798.74146, 0, 96.423584, 256.51163)
+
+[node name="Background3" type="Sprite2D" parent="Decorations/Hills"]
+z_index = -2
+position = Vector2(-63, 137)
+texture = ExtResource("5_036b0")
+region_enabled = true
+region_rect = Rect2(798.74146, 0, 96.423584, 256.51163)
+
+[node name="Background4" type="Sprite2D" parent="Decorations/Hills"]
+z_index = -2
+position = Vector2(33, 138)
+texture = ExtResource("5_036b0")
+region_enabled = true
+region_rect = Rect2(798.74146, 0, 96.423584, 256.51163)
+
+[node name="Background5" type="Sprite2D" parent="Decorations/Hills"]
+z_index = -2
+position = Vector2(128, 138)
+texture = ExtResource("5_036b0")
+region_enabled = true
+region_rect = Rect2(798.74146, 0, 96.423584, 256.51163)
+
+[node name="Background6" type="Sprite2D" parent="Decorations/Hills"]
+z_index = -2
+position = Vector2(223, 137)
+texture = ExtResource("5_036b0")
+region_enabled = true
+region_rect = Rect2(798.74146, 0, 96.423584, 256.51163)
